@@ -3,7 +3,6 @@ import { db } from "../data/connection.js";
 export const createSale = async (req, res) => {
     const { id_customer, amount } = req.body;
     
-    console.log('🛒 Recibiendo venta - id_customer:', id_customer, 'amount:', amount);
 
     const customerCheck = await db.query(
         'SELECT id FROM customers WHERE id = $1',
